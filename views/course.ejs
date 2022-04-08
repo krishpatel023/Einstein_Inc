@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course</title>
+    <link rel="stylesheet" href="css/course-style.css">
+    <link rel="icon" href="https://i.ibb.co/SwyJDWd/d431b7e7ab845546a2dba4cbd63dc42d.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+   
+    <!-- header section starts  -->
+    
+    <header class="header">
+    
+       <a href="/course" class="logo">Einstein Inc. </a>
+    
+       <nav class="navbar">
+          <div id="close-navbar" class="fas fa-times"></div> 
+          <a href="/course">Courses</a>
+          <a href="/list">Tasks</a>
+          <a href="/dashboard">Dashboard</a>
+          <a class ="logout_class" href="/logout">Logout</a>
+       </nav>
+       <div class="icons">
+          <div id="menu-btn" class="fas fa-bars"></div>
+       </div>
+    
+    </header>
+    
+    
+    
+    <!-- header section ends -->
+    
+    <section class="heading-link">
+       <h3>our courses</h3>
+    </section>
+    
+    <section class="courses">
+    
+    
+       <div class="box-container">
+    
+          <div class="box space">
+             <div class="section">
+                <iframe src="https://www.youtube.com/embed/pQN-pnXPaVg" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                </div>
+             <div class="content">
+                <h3>HTML</h3>
+                <p>We will be diving right in HTML basics. These concept builders have been suggested by people from top
+                   companies, so we would emphasize on going through them again, even if you already know these topics.
+                   These would serve as a refresher for the concepts.
+                </p>
+                <div class="flex-container">
+                    <div class="status">
+                        <p>Status:</p>
+                        <p id="toBeChangedHTML" class="status"> Not Completed</p>
+                    </div>
+                    <div class="completed"><a href="#" class="btn" onclick="change_text_HTML()">Completed</a></div>
+             </div>
+          </div>
+          <div class="box space">
+             <div class="section">
+                <iframe src="https://www.youtube.com/embed/ieTHC78giGQ" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                </div>
+             <div class="content">
+                <h3>CSS</h3>
+                <p>We are glad you have made it till here and have completed HTML. We are going to jump into CSS. CSS
+                    determines the overall look and feel of the website and is essential for any website to look good
+                    and have better UI and UX. Let’s cover the fundamentals of CSS and in-depth CSS through the video
+                    series below. We will be starting our project 01 right after getting a strong grasp over HTML & CSS.
+                </p>
+                <div class="flex-container">
+                    <div class="status">
+                        <p>Status:</p>
+                        <p id="toBeChangedCSS" class="status">Not Completed</p>
+                    </div>
+                    <div class="completed"><a href="#" class="btn" onclick="change_text_CSS()">Completed</a></div>
+             </div>
+          </div>
+          <br><br>
+          <div class="box space">
+             <div class="section">
+                <iframe src="https://www.youtube.com/embed/PkZNo7MFNFg" title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                </div>
+             <div class="content">
+                <h3>JavaScript</h3>
+                <p>This tutorial will give you a high level overview of JavaScript (Mandatory to watch & complete).
+                   Questions from topics covered in the below video have been asked multiple times in Full Stack
+                </p>
+                <div class="flex-container">
+                    <div class="status">
+                        <p>Status:</p>
+                        <p id="toBeChangedJS" class="status">Not Completed</p>
+                    </div>
+                    <div class="completed"><a href="#" class="btn" onclick="change_text_JS()">Completed</a></div>
+             </div>
+          </div>
+    </section>
+    
+    <!-- footer section  -->
+    
+    <section class="footer">
+    
+       <div class="box-container">
+    
+          <div class="box">
+             <h3>  Einstein Inc. </h3>
+             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, voluptatem.</p>
+             </div>
+          </div>
+       </div>
+    
+    
+    </section>
+    
+    <!-- custom js file link  -->
+    <script>
+       let navbar = document.querySelector('.header .navbar')
+    
+    document.querySelector('#menu-btn').onclick = () =>{
+      navbar.classList.add('active');
+    }
+    
+    document.querySelector('#close-navbar').onclick = () =>{
+      navbar.classList.remove('active');
+    };
+
+    function change_text_HTML(){
+    document.getElementById("toBeChangedHTML").innerHTML = "Completed";
+    }
+    function change_text_CSS(){
+    document.getElementById("toBeChangedCSS").innerHTML = "Completed";
+    }
+    function change_text_JS(){
+    document.getElementById("toBeChangedJS").innerHTML = "Completed";
+    }
+    
+    </script>
+    
+    </body>
+    </html>

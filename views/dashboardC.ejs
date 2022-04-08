@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/dashboardC-style.css">
+    <link rel="icon" href="https://i.ibb.co/SwyJDWd/d431b7e7ab845546a2dba4cbd63dc42d.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+   
+    <!-- header section starts  -->
+    
+    <header class="header">
+    
+       <a href="/course" class="logo">Einstein Inc. </a>
+    
+       <nav class="navbar">
+          <div id="close-navbar" class="fas fa-times"></div> 
+          <a href="/course">Courses</a>
+          <a href="/list">Tasks</a>
+          <a href="/dashboard">Dashboard</a>
+          <a class ="logout_class" href="/logout">Logout</a>
+       </nav>
+       <div class="icons">
+          <div id="menu-btn" class="fas fa-bars"></div>
+       </div>
+    
+    </header>
+    
+    
+    
+    
+    <section class="courses">
+    
+    
+       <div class="box-container">
+          <div class="box space">
+             <div class="section">
+                <h2><%= user.name %></h2>
+             <div class="content">
+                
+                <form action="/" method="post">
+                   <div class="sec1">
+                      <label for="fname">Name :</label>
+                      <input type="text" id="fname" name="name" value="<%= user.name %>"><br>
+                   </div>
+                   <div class="sec2">
+                      <label for="lname">Email :</label>
+                      <input type="text" id="lname" name="email" value="<%= user.email %>" readonly><br>
+                   </div>
+                   <div class="sec3">
+                      <label for="fname">Password :</label>
+                      <input type="text" id="fname" name="password" placeholder="New Password"><br>
+                   </div>
+                </form>
+    
+             </div>
+             <div class="change"><button type="submit" class="btn">Change</button></div>
+          </div>
+    </section>
+    
+    
+    
+    <!-- custom js file link  -->
+    <script>
+       let navbar = document.querySelector('.header .navbar')
+    
+    document.querySelector('#menu-btn').onclick = () =>{
+      navbar.classList.add('active');
+    }
+    
+    document.querySelector('#close-navbar').onclick = () =>{
+      navbar.classList.remove('active');
+    };
+    
+    
+    const form = document.querySelector('form');
+            
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+    
+                // get the values
+                const name = form.name.value;
+                const password = form.password.value;
+                const email = form.email.value;
+        
+                
+    
+                const res = await fetch('/dashboardC', {
+                    method: 'POST',
+                    body: JSON.stringify({ name, email, password}),
+                    headers: { 'Content-Type' : 'application/json'}
+                });
+                const data = await res.json();              
+                console.log(data);
+                
+                location.assign('/dashboard');
+                
+                
+                
+                });
+    
+    </script>
+    
+    </body>
+    </html>

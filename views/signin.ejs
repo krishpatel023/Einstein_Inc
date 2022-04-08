@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="css/signin-style.css">
+    <link rel="icon" href="https://i.ibb.co/SwyJDWd/d431b7e7ab845546a2dba4cbd63dc42d.png" type="image/x-icon">
+</head>
+<body>
+    <div class="main">
+    <div class="heading">
+        <div class="logo"><a href="/">Einstein Inc.</a></div>
+    </div>
+
+    <form class="box" action="/" method="post">
+        <div class="sub-box">
+        <div class="email">
+            <p>Email</p>
+            <input name="email" type="email" placeholder="abc@gmail.com" required>
+        </div>
+        <div class="password">
+            <p>Password</p>
+            <input name="password" type="password" required placeholder="Enter Your Password">
+        </div>
+        <div class="in">
+            <button type="submit">Sign In</button>
+        </div>
+        <div class="already">
+            <p>Don't have an account?</p>
+            <a href="/signup">Sign Up</a>
+        </div>
+    </div>
+    </form>
+    
+    
+    <div class="align2">
+        <div class="footer">
+            <p>© 2022 All Rights of this site are reserved with Einstein Inc.</p>
+        </div>
+    </div>
+    
+
+    <!-- Circles -->
+    <div class="wave-container">
+        <div class="wave one"></div>
+        <div class="wave two"></div>
+        <div class="wave three"></div>
+    </div>
+</div>
+
+<script>
+    const form = document.querySelector('form');
+    form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            // get the values
+            const email = form.email.value;
+            const password = form.password.value;
+    
+            try {
+                const res = await fetch('/signin', {
+                    method: 'POST',
+                    body: JSON.stringify({ email, password}),
+                    headers: { 'Content-Type' : 'application/json'}
+            });
+            const data = await res.json();
+            console.log(data);
+            if (data.errors) {
+                emailError.textContent = data.errors.email;
+                passwordError.textContent = data.errors.password;
+            }
+            if(data.user){
+                location.assign('/course');
+            }
+            }
+            catch (err){
+                console.log(err);
+            }});
+</script>
+</body>
+</html>

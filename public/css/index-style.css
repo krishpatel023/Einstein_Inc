@@ -1,0 +1,240 @@
+:root{
+
+    --color1:#05386B;
+    --color2:#1d3d51;
+    --color3:#266ea1;
+    --color4:#31a6ff;
+    --color5:#FBFBFB;
+    --color6:#000000;
+    --color7:rgb(53, 130, 167);
+    --color8:rgb(152, 226, 255);
+
+    
+    --typewriterSpeed: 6s;
+    --typewriterCharacters: 24;
+}
+body{
+    margin:0;
+    padding:0;
+    background: var(--color8) ;
+
+    overflow:hidden;
+    font-family: "Source Code Pro", monospace;
+}
+.main{
+    display:flex;
+}
+/* Heading */
+
+.heading{
+    display: flex;
+
+}
+.logo{
+    position:absolute;
+    left:0;
+    transform:translate(20%, 60%);
+    z-index: 100;
+}
+.logo:hover{
+    cursor: pointer;
+}
+.logo a{
+    color:var(--color6);
+    text-decoration:none;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+.h-ancor{
+    position: absolute;
+    right:0;
+    transform: translate(-40%, 90%);
+    background:var(--color6);
+    padding:.5em .8em;
+    border-radius: .4em;
+    z-index: 100;
+}
+.h-ancor:hover{
+    cursor: pointer;
+}
+.h-ancor a{
+    text-decoration: none;
+    color: var(--color5);
+
+}
+/* Github */
+.github{
+    width:100vw;
+    position:absolute;
+    margin-top: 23em;
+    z-index: 100;
+}
+.section{
+    display:flex;
+    flex-wrap: nowrap;
+    /* min-width: 0px; */
+    max-width: 550px;
+    background: var(--color6);
+    border-radius: .8em;
+    margin:0 auto;
+}
+.sec-one img{
+    max-width: 60px ;
+    border-radius: .8em;
+    margin-left: .3em;
+}
+.sec-two{
+    margin: auto;
+}
+
+.sec-two a{
+    color:white;
+    margin-left: .2em;
+    text-decoration: none;
+    font-size: 1.5em;
+    text-align: center;
+    display: flex;
+    flex-wrap: nowrap;
+    
+}
+/* Circles */
+.wave-container {
+	width: 300vw;
+	height: 140%;
+	position: fixed;
+	overflow: hidden;
+	transform: translate3d(0, 0, 0);
+}
+
+.wave {
+	opacity: 1;
+	position: absolute;
+	top: 60%;
+	left: -28%;
+	/* background: #18DFAD; */
+    background: var(--color4);
+	width: 100%;
+	height: 300vw;
+	transform-origin: 50% 49%;
+	border-radius: 49%;
+	-webkit-animation: drift 3000ms infinite linear;
+	animation: drift 8000ms infinite linear;
+	will-change: transform;
+    z-index: 3;
+}
+.wave.two {
+	animation: drift 9000ms infinite linear;
+	opacity: 1;
+	background: var(--color1);
+	top: 60%;
+    left:-32%;
+}
+
+.wave.three {
+	animation: drift 4000ms infinite linear;
+	opacity: 1;
+	/* background: #F12645; */
+    background: var(--color3);
+	top: 60%;
+	left: -36%;
+	z-index: -2;
+}
+
+@keyframes drift {
+  from { transform: rotate(0deg); }
+  from { transform: rotate(360deg); }
+}
+/* PINE IMG */
+.pine{
+    position:absolute;
+    transform: translate(-50%,20%);
+}
+.pine2{
+    position:absolute;
+    right:0;
+    transform: translate(45%,0%);
+
+}
+
+/* Typing */
+
+.align{
+    position: absolute;
+    width:100vw;
+}
+.body{
+    font-family: "Source Sans Pro", sans-serif;
+    margin-top: 15em;
+    display: grid;
+    place-content: center;
+    text-align: center;
+}
+h1 {
+    font-size: clamp(1rem, 3vw + 1rem, 4rem);
+    position: relative;
+    font-family: "Source Code Pro", monospace;
+    position: relative;
+    width: max-content;
+}
+
+h1::before,
+h1::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+h1::before {
+    background: var(--color8);
+    animation: typewriter var(--typewriterSpeed) steps(var(--typewriterCharacters)) 1s forwards;
+}
+
+h1::after {
+    width: 0.125em;
+    background: black;
+    animation: typewriter var(--typewriterSpeed) steps(var(--typewriterCharacters)) 1s forwards,
+        blink 750ms steps(var(--typewriterCharacters)) infinite;
+}
+
+
+
+@keyframes typewriter {
+    to {
+        left: 100%;
+    }
+}
+
+@keyframes blink {
+    to {
+        background: transparent;
+    }
+}
+
+
+
+/* footer */
+.align2{
+    
+    width:100vw;
+    
+    position:absolute;
+    bottom: 0;
+    z-index:100;
+    
+} 
+.footer{
+    z-index: 90;
+    position:absolute;
+    bottom: 500%;
+    place-content: center;
+    text-align: center;
+    width: 100vw;
+}
+.footer p{
+    text-align: center;
+}
+
+  
