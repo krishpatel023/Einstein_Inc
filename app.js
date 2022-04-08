@@ -41,6 +41,7 @@ app.get('/dashboardC', (req, res) => res.render('dashboardC'));
 app.get('/task',(req, res) => res.render('list'));
 app.use(authRoutes);
 
+app.get('/github', (req, res) => res.redirect('https://github.com/krishpatel023/Einstein_Inc'));
 
 //Tasks
 
